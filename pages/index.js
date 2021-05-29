@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import SubElement from '../Components/singleElement';
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -34,12 +35,9 @@ export default function Home() {
             <img src="/images/informational.jpg" />
           </div>
         </div>
-        <canvas id="myCanvas" width="200" height="100"
-          style="border:1px solid #000000;">
-        </canvas>
 
       </main>
-
+      <SubElement />
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
