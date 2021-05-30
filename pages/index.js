@@ -25,15 +25,15 @@ export default function Home() {
         </div>
 
         <div>
-          <img src="/images/informational.jpg" />
+          <img src="/images/automation.png" />
         </div>
 
         <div>
-          <img src="/images/informational.jpg" />
+          <img src="/images/integrated.jpg" />
         </div>
 
         <div>
-          <img src="/images/informational.jpg" />
+          <img src="/images/automated1.jpg" />
         </div>
         <Curve onClick={handleClick}/>
         {renderComponent()}
