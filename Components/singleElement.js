@@ -1,34 +1,33 @@
-import React, { useState } from 'react';
-import styles from '/styles/Home.module.css'
-export default function SubElement() {
+import { useEffect } from 'react'
+import styles from '../styles/SingleElement.module.css'
+export default function Informational(props) {
     return (
-        <>
-            <div className={styles.singleElement}>
+        <div id="abc" className={styles.wrapper}>
+            <a className={styles.back} onClick={props.onBack} href="#">Back to Maturity Curve</a>
+            <div>
                 <div>
-                    <div className={styles.topDiv}>
-                        <h2>Digitalized</h2>
-                        <span>Level two</span>
-                        <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
-                    </div>
+                    <h2>Digitalized</h2>
+                    <span>Level two</span>
+                    <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
+                </div>
 
-                    <div className={styles.buttomDiv}>
-                        <ul>
-                            <li>
-                                Data influenced decition culture
-                        </li>
-                            <li>
-                                Data influenced decition culture
-                        </li>
-                            <li>
-                                Data influenced decition culture
-                        </li>
-                            <li>
-                                Data influenced decition culture
-                        </li>
-                        </ul>
-                    </div>
+                <div className={styles.buttomDiv}>
+                    <ul>
+                        <li>
+                            Data influenced decition culture
+                    </li>
+                        <li>
+                            Data influenced decition culture
+                    </li>
+                        <li>
+                            Data influenced decition culture
+                    </li>
+                        <li>
+                            Data influenced decition culture
+                    </li>
+                    </ul>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
