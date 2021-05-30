@@ -5,7 +5,6 @@ export default function SubElement() {
         <>
             <div className={styles.singleElement}>
                 <div>
-                    <span className={styles.backKey}>Back to Maturaty Curve</span>
                     <div className={styles.topDiv}>
                         <h2>Digitalized</h2>
                         <span>Level two</span>
