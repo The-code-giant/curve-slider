@@ -1,4 +1,5 @@
 import css from '../styles/curve.module.css'
+import { useEffect } from 'react';
 
 export default function Curve(props){
     const points = [
@@ -62,12 +63,12 @@ export default function Curve(props){
         ctx.stroke()
         ctx.font = "bold 22px Arial"
         ctx.beginPath()
-        ctx.fillText(text,point.X-(ctx.measureText(text).width/2),point.Y+50)
+        ctx.fillText(text,point.X-(ctx.measureText(text).width/2),point.Y+60)
         ctx.stroke()
     }
     
-    function curveTo(ctx,hnd1,hnd2,point){
-        ctx.bezierCurveTo(hnd1.X,hnd1.Y,hnd2.X,hnd2.Y,point.X,point.Y)
+    function curveTo(ctx,h1,h2,point){
+        ctx.bezierCurveTo(h1.X,h1.Y,h2.X,h2.Y,point.X,point.Y)
     }
     
     function getRegion(p){
@@ -85,28 +86,28 @@ export default function Curve(props){
         drawShape(ctx)
         conv.addEventListener("click",e=>{
             const bounds = conv.getBoundingClientRect()
-            x = e.pageX - bounds.left - scrollX
-            y = e.pageY - bounds.top - scrollY
+            let x = e.pageX - bounds.left - scrollX
+            let y = e.pageY - bounds.top - scrollY
             x /= bounds.width
             y /= bounds.height
             x *= conv.width
             y *= conv.height
 
             let ind = getRegion({X:x,Y:y})
-            if(ind!=-1)
-                alert("you clicked :"+ind.name)
+            if(ind!=-1&&props.onClick)
+                props.onClick(ind)
             
         })
         conv.addEventListener("mousemove",e=>{
             const bounds = conv.getBoundingClientRect()
-            x = e.pageX - bounds.left - scrollX
-            y = e.pageY - bounds.top - scrollY
+            let x = e.pageX - bounds.left - scrollX
+            let y = e.pageY - bounds.top - scrollY
             x /= bounds.width
             y /= bounds.height
             x *= conv.width
             y *= conv.height
 
-            if(getRegion({X:x,Y:y}!=-1))
+            if(getRegion({X:x,Y:y})!=-1)
                 conv.className=`${css.active} ${css.canvas}`
             else
                 conv.className=css.canvas
