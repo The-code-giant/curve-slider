@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import styles from '../styles/SingleElement.module.css'
-export default function Informational(props) {
+export default function SingleElement(props) {
     return (
         <div id="abc" className={styles.wrapper}>
             <a className={styles.back} onClick={props.onBack} href="#">Back to Maturity Curve</a>
