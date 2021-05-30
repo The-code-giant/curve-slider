@@ -1,7 +1,8 @@
+import { useEffect } from 'react'
 import styles from '../styles/informational.module.css'
 export default function Informational(props){
     return(
-        <div className={styles.wrapper}>
+        <div id="abc" className={styles.wrapper}>
             <a className={styles.back} onClick={props.onBack} href="#">Back to Maturity Curve</a>
             <div>
                 <div>
