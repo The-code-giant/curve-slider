@@ -28,7 +28,7 @@ export default function Curve(props){
 
     function drawShape(ctx){
         ctx.beginPath()
-        ctx.lineWidth = 3
+        ctx.lineWidth = 8
         ctx.lineCap='round'
         ctx.moveTo(points[0].X,points[0].Y)
         curveTo(ctx,handles[0],handles[1],points[1])
@@ -50,7 +50,7 @@ export default function Curve(props){
     function clearCircle(ctx,point,text) {
         const radius = 30;
         const {X,Y} = point;
-        ctx.lineWidth=8;
+        ctx.lineWidth=13;
         ctx.save();
         ctx.beginPath();
         ctx.arc(X, Y, radius, 0, 2*Math.PI, true);

@@ -21,11 +21,14 @@
 
 .wrapper{
     position: relative;
-    width: 90vw;
-    height: 45vw;
+    width: 800px;
+    height: 400px;
+    max-width: 80vw;
+    max-height: 40vw;
     margin:0px auto;
 }
-.wrapper>div:not(.overlay){
+
+.wrapper>div.img_cont{
     float: left;
     position: relative;
     width:25%;

@@ -5,6 +5,7 @@ import styles from '../styles/curve.module.css'
 import Curve from '../Components/curve'
 import { useState } from 'react';
 import { render } from 'react-dom';
+import Informational from '../Components/informational';
 
 export default function Home() {
   const [comp,setComp] = useState("unset")
@@ -12,7 +13,7 @@ export default function Home() {
     if(comp==="unset")
       return;
     else if(comp==="Informational")
-      return (<div className={styles.overlay}><SingleElement/></div>)
+      return (<div className={styles.overlay}><Informational onBack={e=>{e.preventDefault(); setComp("unset")}}/></div>)
   }
   function handleClick(e){
     setComp(e.name)
@@ -20,37 +21,25 @@ export default function Home() {
   return (
     <>
       <div className={styles.wrapper}>
-        <div>
+        <div className={styles.img_cont}>
           <img src="/images/informational.jpg" />
         </div>
 
-        <div>
+        <div className={styles.img_cont}>
           <img src="/images/automation.png" />
         </div>
 
-        <div>
+        <div className={styles.img_cont}>
           <img src="/images/integrated.jpg" />
         </div>
 
-        <div>
+        <div className={styles.img_cont}>
           <img src="/images/automated1.jpg" />
         </div>
         <Curve onClick={handleClick}/>
         {renderComponent()}
       </div>
-      <SingleElement />
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+
     </>
   )
 }
