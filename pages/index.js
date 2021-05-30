@@ -4,15 +4,16 @@ import { useState } from 'react';
 import SingleElement from '../Components/singleElement';
 
 export default function Home() {
-  const [comp, setComp] = useState("unset")
+  const [selectedComponent, setSelectedComponent] = useState("unset")
   function renderComponent() {
-    if (comp === "unset") /// we can add other conditions
+    if (selectedComponent === "unset") /// we can add other conditions
       return (<span className={styles.overlay}><Curve onClick={handleClick} /></span>)
     else
-      return (<div className={styles.overlay}><SingleElement onBack={e => setComp("unset")} /></div>)
+      return (<div className={styles.overlay}><SingleElement onBack={e => setSelectedComponent("unset")} selectedComponent={selectedComponent} /></div>)
   }
   function handleClick(e) {
-    setComp(e.name)
+    console.log(e.name)
+    setSelectedComponent(e.name)
   }
   return (
     <div style={{ display: 'flex', alignItems: "center", height: "100vh" }}>
