@@ -35,19 +35,20 @@ export default function Curve(props) {
         curveTo(ctx, handles[2], handles[3], points[2])
 
         var gradient = ctx.createLinearGradient(0, 0, 1200, 0)
-        gradient.addColorStop("0", "#377cbf")
-        gradient.addColorStop("1.0", "#663ecc")
+        gradient.addColorStop("0", "#4A7BB9")
+        gradient.addColorStop("0.9", "#5F3DC4")
+        gradient.addColorStop("1.0", "#603FC4")
 
         ctx.strokeStyle = gradient
         ctx.stroke()
 
-        clearCircle(ctx, circles[0], "Informational")
-        clearCircle(ctx, circles[1], "Digitalized")
-        clearCircle(ctx, circles[2], "Integrated")
-        clearCircle(ctx, circles[3], "Automated")
+        clearCircle(ctx, circles[0], "Informational", '#4A7BB9')
+        clearCircle(ctx, circles[1], "Digitalized", "#4A7BB9")
+        clearCircle(ctx, circles[2], "Integrated", "#603FC4")
+        clearCircle(ctx, circles[3], "Automated", "#603FC4")
     }
 
-    function clearCircle(ctx, point, text) {
+    function clearCircle(ctx, point, text, color) {
         const radius = 30;
         const { X, Y } = point;
         ctx.lineWidth = 13;
@@ -59,9 +60,9 @@ export default function Curve(props) {
         ctx.restore();
         ctx.beginPath()
         ctx.arc(X, Y, radius - 8, 0, 2 * Math.PI, true)
-        ctx.strokeStyle = "green"
+        ctx.strokeStyle = color
         ctx.stroke()
-        ctx.font = "bold 22px Arial"
+        ctx.font = "300 22px arial"
         ctx.beginPath()
         ctx.fillText(text, point.X - (ctx.measureText(text).width / 2), point.Y + 60)
         ctx.stroke()
