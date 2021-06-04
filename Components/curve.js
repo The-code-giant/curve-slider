@@ -4,26 +4,26 @@ import { useEffect } from 'react';
 export default function Curve(props) {
     const points = [
         { X: 50, Y: 500 },
-        { X: 600, Y: 300 },
-        { X: 1150, Y: 100 }
+        { X: 650, Y: 325 },
+        { X: 1150, Y: 80 }
     ]
     const handles = [
-        { X: 350, Y: 530 },
+        { X: 300, Y: 520 },
         { X: 430, Y: 500 },
-        { X: 770, Y: 100 },
-        { X: 850, Y: 70 }
+        { X: 900, Y: 110 },
+        { X: 1000, Y: 110 }
     ]
     const circles = [
-        { X: 150, Y: 510 },
-        { X: 450, Y: 445 },
-        { X: 750, Y: 155 },
-        { X: 1050, Y: 90 }
+        { X: 150, Y: 505 },
+        { X: 450, Y: 455 },
+        { X: 750, Y: 245 },
+        { X: 1050, Y: 100 }
     ]
     const regions = [
-        { X: 80, Y: 480, W: 145, H: 90, name: "Informational" },
-        { X: 385, Y: 415, W: 125, H: 90, name: "Digitalized" },
-        { X: 690, Y: 125, W: 118, H: 90, name: "Integrated" },
-        { X: 985, Y: 60, W: 120, H: 90, name: "Automated" },
+        { X: 80, Y: 475, W: 145, H: 90, name: "Informational" },
+        { X: 385, Y: 425, W: 125, H: 90, name: "Digitalized" },
+        { X: 690, Y: 220, W: 118, H: 90, name: "Integrated" },
+        { X: 985, Y: 70, W: 120, H: 90, name: "Automated" },
     ]
 
     function drawShape(ctx) {
