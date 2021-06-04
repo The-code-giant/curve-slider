@@ -4,7 +4,7 @@ export default function SingleElement(props) {
     const slideInfo = COMPONENT_DATA[props.selectedComponent]
     return (
         <div id="abc" className={styles.wrapper} style={{ backgroundImage: `url(${slideInfo.imageUrl})` }}>
-            <a className={styles.back} onClick={props.onBack} href="#"><div/>Back to Maturity Curve</a>
+            <a className={styles.back} onClick={props.onBack} href="#"><div style={{borderColor: slideInfo.borderColor}}/>Back to Maturity Curve</a>
             <div>
                 <div>
                     <h2>{slideInfo.title}</h2>
@@ -26,6 +26,7 @@ export default function SingleElement(props) {
 
 const COMPONENT_DATA = {
     Informational: {
+        borderColor: '#3366CC',
         imageUrl: '/slide/Informational.jpg',
         title: 'Informational',
         subTitle: 'level two',
@@ -33,6 +34,7 @@ const COMPONENT_DATA = {
         list: ['Data influenced decition culture', 'Data influenced decition culture', "Data influenced decition culture"]
     },
     Integrated: {
+        borderColor: '#6666CC',
         imageUrl: '/slide/Integrated.jpg',
         title: 'Integrated',
         subTitle: 'level two',
@@ -40,6 +42,7 @@ const COMPONENT_DATA = {
         list: ['Data influenced decition culture', 'Data influenced decition culture', "Data influenced decition culture"]
     },
     Digitalized: {
+        borderColor: '#6666CC',
         imageUrl: '/slide/Digitalized.jpg',
         title: 'Digitalized',
         subTitle: 'level two',
@@ -47,6 +50,7 @@ const COMPONENT_DATA = {
         list: ['Data influenced decition culture', 'Data influenced decition culture', "Data influenced decition culture"]
     },
     Automated: {
+        borderColor: '#6633CC',
         imageUrl: '/slide/Informational.jpg',
         title: 'Automated',
         subTitle: 'level two',
